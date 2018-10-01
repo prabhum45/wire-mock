@@ -1,0 +1,21 @@
+{
+  "priority": 10,
+  "request" : {
+    "urlPathPattern" : "/check",
+    "method" : "GET",
+    "queryParameters" : {
+      "ip" : {
+        "matches" : "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$"
+        }
+    }
+  },
+  "response":
+    {
+      "headers": {
+        "Content-Type": "text/html"
+      },
+      "status": 200,
+      "body":"{\"status\": \"Approved\", \"ip\":\"{{request.query.ip}}\"}",
+      "transformers": ["response-template"]
+  }
+}

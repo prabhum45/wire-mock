@@ -1,0 +1,21 @@
+{
+  "priority": 5,
+  "request" : {
+    "urlPathPattern" : "/check",
+    "method" : "GET",
+    "queryParameters" : {
+      "email" : {
+        "matches" : "^(.*?(.sd|sy|ir|kp|cu)$)"
+        }
+    }
+  },
+  "response":
+    {
+      "headers": {
+        "Content-Type": "text/html"
+      },
+      "status": 200,
+      "body":"{\"status\": \"Blocked\", \"email\":\"{{request.query.email}}\"}",
+      "transformers": ["response-template"]
+  }
+}

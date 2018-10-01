@@ -1,0 +1,21 @@
+{
+  "priority": 8,
+  "request" : {
+    "urlPathPattern" : "/check",
+    "method" : "GET",
+    "queryParameters" : {
+      "email" : {
+        "matches" : ".*"
+        }
+    }
+  },
+  "response":
+    {
+      "headers": {
+        "Content-Type": "text/html"
+      },
+      "status": 200,
+      "body":"{\"status\": \"Approved\", \"email\":\"{{request.query.email}}\"}",
+      "transformers": ["response-template"]
+  }
+}
