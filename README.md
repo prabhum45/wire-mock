@@ -7,7 +7,7 @@ Currently we Need to follow below steps to stand up a server on AWS with mocked 
 
 Steps to follow :
 ```
-  1) Create a AWS VM instanse with ubuntu flavor and a public ip associated to it , so it can be access from MS cluster.
+  1) Create a AWS VM instanse with ubuntu flavor (t2.micro) and a public ip associated to it , so it can be access from MS cluster.
     a) Add a custom security group to allow Custom TCP 
         HTTP	TCP	80	0.0.0.0/0	
         HTTP	TCP	80	::/0	
